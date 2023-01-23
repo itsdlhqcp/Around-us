@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Newsitem =(props)=>{
-    let {title,description,imageUrl,newsUrl,author,date}=props;
+    let {title,description,imageUrl,newsUrl,author,date,key}=props;
     return (
-      <div className='my-3'>
+      <div key={key} className='my-3'>
           <div className="card" style={{width: "18rem"}}>
               <img src={imageUrl} className="card-img-top" alt="..."/>
               <div className="card-body">
