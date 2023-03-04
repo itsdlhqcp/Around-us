@@ -1,3 +1,11 @@
+##  AIM OF THIS PROJECT 
+
+This project aim to build a short-news app which fetch data from various websites and where you can go to resourse website by cliking on the read-more button
+
+IN latest version we are also planning to impliment additional new features to this app
+    ->like your favourite news and add it your readlater list
+    ->Share news from this apk
+    ->personally add some famous news with resourse and get points as with likes
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

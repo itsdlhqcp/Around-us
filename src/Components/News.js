@@ -40,7 +40,7 @@ const News = (props) => {
                     title={element.title}
                     description={element.content}
                     imageUrl={element.imageUrl}
-                    // newsUrl={element.url}
+                    redMore={element.readMoreUrl}
                     // author={element.author}
                     // date={element.publishedAt}
                   />
