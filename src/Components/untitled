@@ -1,3 +1,5 @@
+here this datas are fetched from inshort json and published to user in a differnt UI where only headline are avaialble
+
 business
 entertainment
 general
@@ -5,5 +7,8 @@ health
 science
 sports
 technology
+
+additionals to be added::-->>
+automobile,miscellaneous,startup,india,world
 
 

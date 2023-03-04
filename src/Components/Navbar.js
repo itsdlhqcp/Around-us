@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar=()=>{
+    //component navbar is rendered here
     return (
       <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -21,7 +22,12 @@ const Navbar=()=>{
                 <li className="nav-item"><Link className="nav-link" to="/politics">Politics</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/science">Science</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/technology">Technology</Link></li>       
+                <li className="nav-item"><Link className="nav-link" to="/technology">Technology</Link></li>  
+                <li className="nav-item"><Link className="nav-link" to="/automobile">Automobile</Link></li>    
+                <li className="nav-item"><Link className="nav-link" to="/miscellaneous">Miscellaneous</Link></li>     
+                <li className="nav-item"><Link className="nav-link" to="/startup">StartUp</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/india">India</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/world">World</Link></li>
             </ul>
             </div>
         </div>

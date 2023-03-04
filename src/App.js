@@ -7,7 +7,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
+                 ///components such as navbar and other data fetch on cards are rendred with routing here
  const App =()=> {
     return (
       <div>
@@ -22,6 +22,11 @@ import {
             <Route exact path="/science" element={<News key="science" country="in" category="science"/>}></Route>
             <Route exact path="/sports"element={<News key="sports" country="in" category="sports"/>}></Route>
             <Route exact path="/technology"element={<News key="technology" country="in" category="technology"/>}></Route>
+            <Route exact path="/automobile"element={<News key="automobile" country="in" category="automobile"/>}></Route>
+            <Route exact path="/miscellaneous"element={<News key="miscellaneous" country="in" category="miscellaneous"/>}></Route>
+            <Route exact path="/startup"element={<News key="startup" country="in" category="startup"/>}></Route>
+            <Route exact path="/india"element={<News key="india" country="in" category="india"/>}></Route>
+            <Route exact path="/world"element={<News key="world" country="in" category="world"/>}></Route>
         </Routes>
         </Router>
       </div>
