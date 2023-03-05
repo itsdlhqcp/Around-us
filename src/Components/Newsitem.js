@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react'
 
 const Newsitem =(props)=>{
@@ -37,17 +36,11 @@ const Newsitem =(props)=>{
     console.log('Web Share API not supported.');
   }
 }
-
-
-
-
-
-
     let {title,description,imageUrl,key,redMore}=props;    //newsUrl,author,date,readMoreUrl
     return (
       <div key={key} className='my-3'>
           <div className="card" style={{width: "21rem"}}>
-              <img src={imageUrl} className="card-img-top" alt="..."/>
+              <img src={imageUrl} className="card-img-top" alt="..." sizes="(max-height: 576px) 100vw, (max-height: 768px) 50vw, 33vw" style={{height: "17rem" ,  objectFit: "cover"}}/>
               <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{description}</p>
@@ -71,7 +64,6 @@ const Newsitem =(props)=>{
       </div>
     )
   
-
 }
 
 export default Newsitem
