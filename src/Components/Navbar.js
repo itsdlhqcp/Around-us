@@ -7,9 +7,8 @@ const Navbar=()=>{
     const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleCollapse = () => {
-    setIsCollapsed(false);
+    setIsCollapsed(false);                          //this function closes the navbar after a content is selected
   }; 
-
     return (
       <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

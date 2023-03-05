@@ -19,7 +19,7 @@ const News = (props) => {
         setLoader(false);
         setArticles(response.data.data);
       });
-  }, []);
+  }, );
 
   return (
     <div >
