@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react'
 
 const Newsitem =(props)=>{
@@ -23,6 +24,25 @@ const Newsitem =(props)=>{
     setIsMarked(!isMarked);
   }
 
+  const handleShare = () => {
+  if (navigator.share) {
+    navigator.share({
+      title: props.title,
+      text: props.description,
+      url: props.redMore,
+    })
+    .then(() => console.log('Link shared successfully.'))
+    .catch((error) => console.log('Error sharing link:', error));
+  } else {
+    console.log('Web Share API not supported.');
+  }
+}
+
+
+
+
+
+
     let {title,description,imageUrl,key,redMore}=props;    //newsUrl,author,date,readMoreUrl
     return (
       <div key={key} className='my-3'>
@@ -38,9 +58,13 @@ const Newsitem =(props)=>{
                 <button className="btn btn-primary btn-sm" onClick={handleDoubleTap} style={{ marginLeft: '10px' }}>
                 Like <span className="badge badge-light">{likes}</span>
                  </button>
-                  <button className="btn-sm" onClick={handleClick} style={{ marginLeft: '73px' }}>
-                    {isMarked ? "marked" : "✔"}
+                 <button className="btn btn-outline-primary btn-sm" onClick={handleShare} style={{ marginLeft: '10px' }}>
+                 share
                   </button>
+                  <button className="btn btn-sm btn-secondary" onClick={handleClick} style={{ marginLeft: '10px' }}>
+                    {isMarked ? "marked" : "mark it"}
+                  </button>
+                  
                 </div>
               </div>
           </div>
