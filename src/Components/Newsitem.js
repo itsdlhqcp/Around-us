@@ -18,12 +18,12 @@ const Newsitem =(props)=>{
     // }
 
     // function ReadLaterButton() {
-  const [isMarked, setIsMarked] = useState(false);
+  const [isMarked, setIsMarked] = useState(false);   //marked for later referance
   const handleClick = () => {
     setIsMarked(!isMarked);
   }
 
-  const handleShare = () => {
+  const handleShare = () => {      //it handle share at web view not in android
   if (navigator.share) {
     navigator.share({
       title: props.title,
