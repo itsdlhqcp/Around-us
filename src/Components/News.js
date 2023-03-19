@@ -43,7 +43,7 @@ const News = (props) => {
       ) : (
         <div className="container my-3" style={{ margin: "1px 0px" }}>
           <span class="small-orange-double-underline">
-          <h2 className="text-center" style={{ margin: "1px 0px" }}>
+          <h2 className="text-center " style={{ margin: "66px 0px 0px 0px"  }}>
             News - Top {capitalizeFirstLetter(props.category)} Headlines
           </h2>
           </span>

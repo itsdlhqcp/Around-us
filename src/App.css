@@ -33,6 +33,15 @@
   text-decoration: underline double red;
 }
 
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+
 
 
 @keyframes App-logo-spin {

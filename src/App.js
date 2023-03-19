@@ -22,7 +22,9 @@ import SplashScreen from './Components/SplashScreen';
       <div className="App">
         {loading ? <SplashScreen /> : 
          <Router>
-         <Navbar/>
+         <div className="navbar-container">
+         <Navbar />
+         </div>
          <Routes>
              <Route exact path="/" element={<News key="general" country="in" category="all"/>}></Route>
              <Route exact path="/business" element={<News key="business" country="in" category="business"/>}></Route>
