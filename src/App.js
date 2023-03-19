@@ -18,6 +18,7 @@ import SplashScreen from './Components/SplashScreen';
   }, []);
     return (
       
+      
       <div className="App">
         {loading ? <SplashScreen /> : 
          <Router>

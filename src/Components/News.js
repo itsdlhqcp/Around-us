@@ -12,25 +12,41 @@ const News = (props) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
               ///here with respect to value we chose from nav bar fetch and render specified data
+              //asynchronous fuction implimented in above code to sort error
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://inshorts.deta.dev/news?category=${props.category}`)
+  //     .then((response) => {
+  //       setLoader(false);
+  //       setArticles(response.data.data);
+  //     });
+  // }, );
+
   useEffect(() => {
-    axios
-      .get(`https://inshorts.deta.dev/news?category=${props.category}`)
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://inshorts.deta.dev/news?category=${props.category}`);
         setLoader(false);
         setArticles(response.data.data);
-      });
-  }, );
-
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, [props.category]);
+  
   return (
     <div >
       {
       loader ? (
         <div className="myloader"> <InfinitySpin width="200" color="#000" /></div>
       ) : (
-        <div className="container my-3">
-          <h1 className="text-center" style={{ margin: "35px 0px" }}>
+        <div className="container my-3" style={{ margin: "1px 0px" }}>
+          <span class="small-orange-double-underline">
+          <h2 className="text-center" style={{ margin: "1px 0px" }}>
             News - Top {capitalizeFirstLetter(props.category)} Headlines
-          </h1>
+          </h2>
+          </span>
           <div className="row">
             {articles?.map((element) => {
               return (

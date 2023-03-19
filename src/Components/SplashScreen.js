@@ -5,7 +5,7 @@ function SplashScreen() {
   return (
     <div className="splash-screen">
       {/* <img src="splash-image.jpg" alt="Splash Screen Image" /> */}
-      <h1>Welcome to my app!</h1>
+      <h1>Welcome to our newsapp project!</h1>
       <p>Loading...</p>
     </div>
   );

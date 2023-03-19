@@ -48,15 +48,15 @@ const Newsitem =(props)=>{
                 <div>
                 <a rel="noreferrer" href={redMore} target="_balnk" className="btn btn-sm btn-dark pr-3">Read More</a>
                 {/* <button type="button" class="btn btn-sm btn-outline-primary pr-3" style={{ marginLeft: '10px' }}><i class="fas fa-heart"></i>👍</button> */}
-                <button className="btn btn-primary btn-sm" onClick={handleDoubleTap} style={{ marginLeft: '10px' }}>
+                {/* <button className="btn btn-primary btn-sm" onClick={handleDoubleTap} style={{ marginLeft: '10px' }}>
                 Like <span className="badge badge-light">{likes}</span>
-                 </button>
+                 </button> */}
                  <button className="btn btn-outline-primary btn-sm" onClick={handleShare} style={{ marginLeft: '10px' }}>
                  share
                   </button>
-                  <button className="btn btn-sm btn-secondary" onClick={handleClick} style={{ marginLeft: '10px' }}>
+                  {/* <button className="btn btn-sm btn-secondary" onClick={handleClick} style={{ marginLeft: '10px' }}>
                     {isMarked ? "marked" : "mark it"}
-                  </button>
+                  </button> */}
                   
                 </div>
               </div>
