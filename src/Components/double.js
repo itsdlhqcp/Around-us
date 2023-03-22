@@ -169,3 +169,32 @@
 // onClick={
 
 
+
+
+
+
+
+// <div key={key} className='my-3'>
+      //     <div className="card" style={{width: "21rem"}}>
+      //         <img src={imageUrl} className="card-img-top" alt="..." sizes="(max-height: 576px) 100vw, (max-height: 768px) 50vw, 33vw" style={{height: "17rem" ,  objectFit: "cover"}}/>
+      //         <div className="card-body">
+      //           <h5 className="card-title">{title}</h5>
+      //           <p className="card-text">{description}</p>
+      //           {/* <p className="card-text"><small className="text-muted">By {!author?"Unknown":author} on {date}</small></p> */}
+      //           <div>
+      //           <a rel="noreferrer" href={redMore} target="_balnk" className="btn btn-sm btn-dark pr-3">Read More</a>
+      //           {/* <button type="button" class="btn btn-sm btn-outline-primary pr-3" style={{ marginLeft: '10px' }}><i class="fas fa-heart"></i>👍</button> */}
+      //           {/* <button className="btn btn-primary btn-sm" onClick={handleDoubleTap} style={{ marginLeft: '10px' }}>
+      //           Like <span className="badge badge-light">{likes}</span>
+      //            </button> */}
+      //            <button className="btn btn-outline-primary btn-sm" onClick={handleShare} style={{ marginLeft: '10px' }}>
+      //            share
+      //             </button>
+      //             {/* <button className="btn btn-sm btn-secondary" onClick={handleClick} style={{ marginLeft: '10px' }}>
+      //               {isMarked ? "marked" : "mark it"}
+      //             </button> */}
+                  
+      //           </div>
+      //         </div>
+      //     </div>
+      // </div>

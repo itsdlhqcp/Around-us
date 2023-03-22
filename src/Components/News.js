@@ -26,6 +26,7 @@ const News = (props) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`https://inshorts.deta.dev/news?category=${props.category}`);
+        // const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=492910a2d3eb4024a0d2c79dda65d0a6`);
         setLoader(false);
         setArticles(response.data.data);
       } catch (error) {
@@ -57,8 +58,9 @@ const News = (props) => {
                     description={element.content}
                     imageUrl={element.imageUrl}
                     redMore={element.readMoreUrl}
-                    // author={element.author}
-                    // date={element.publishedAt}
+                    source={element.source}
+                    author={element.author}
+                    date={element.publishedAt}
                   />
                 </div>
               );
@@ -82,3 +84,7 @@ News.propTypes = {
 };
 
 export default News;
+
+
+
+/// https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=492910a2d3eb4024a0d2c79dda65d0a6

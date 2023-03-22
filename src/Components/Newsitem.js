@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Newsitem =(props)=>{
 
-    const [likes, setLikes] = useState(0);   ///sets initial coumts of likes to be zero
-    const handleDoubleTap = () => {
-      setLikes(likes + 1);
-    }
+    // const [likes, setLikes] = useState(0);   ///sets initial coumts of likes to be zero
+    // const handleDoubleTap = () => {
+    //   setLikes(likes + 1);
+    // }
   
     // let lastTap = 0;
     // const handleTap = () => {
@@ -18,10 +18,10 @@ const Newsitem =(props)=>{
     // }
 
     // function ReadLaterButton() {
-  const [isMarked, setIsMarked] = useState(false);   //marked for later referance
-  const handleClick = () => {
-    setIsMarked(!isMarked);
-  }
+  // const [isMarked, setIsMarked] = useState(false);   //marked for later referance
+  // const handleClick = () => {
+  //   setIsMarked(!isMarked);
+  // }
 
   const handleShare = () => {      //it handle share at web view not in android
   if (navigator.share) {

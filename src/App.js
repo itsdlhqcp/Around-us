@@ -8,6 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import SplashScreen from './Components/SplashScreen';
+import FloatingButton from './Components/assets/FloatingButton';
                  ///components such as navbar and other data fetch on cards are rendred with routing here
  const App =()=> {
   const [loading, setLoading] = useState(true);     //used for splash screen
@@ -40,6 +41,7 @@ import SplashScreen from './Components/SplashScreen';
              <Route exact path="/india"element={<News key="india" country="in" category="india"/>}></Route>
              <Route exact path="/world"element={<News key="world" country="in" category="world"/>}></Route>
          </Routes>
+         <FloatingButton />
          </Router>
         }
        
