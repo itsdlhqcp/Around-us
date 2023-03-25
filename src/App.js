@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import SplashScreen from './Components/SplashScreen';
 import FloatingButton from './Components/assets/FloatingButton';
+import VoiceScreen from './Components/VoiceAssist/VoiceScreen';
+
+
                  ///components such as navbar and other data fetch on cards are rendred with routing here
  const App =()=> {
   const [loading, setLoading] = useState(true);     //used for splash screen
@@ -17,6 +20,7 @@ import FloatingButton from './Components/assets/FloatingButton';
       setLoading(false);
     }, 7000); // Set a timer for 3 seconds to simulate loading time
   }, []);
+  
     return (
       
       
@@ -40,6 +44,7 @@ import FloatingButton from './Components/assets/FloatingButton';
              <Route exact path="/startup"element={<News key="startup" country="in" category="startup"/>}></Route>
              <Route exact path="/india"element={<News key="india" country="in" category="india"/>}></Route>
              <Route exact path="/world"element={<News key="world" country="in" category="world"/>}></Route>
+             <Route exact path="/voice"  element={<VoiceScreen/>} />
          </Routes>
          <FloatingButton />
          </Router>

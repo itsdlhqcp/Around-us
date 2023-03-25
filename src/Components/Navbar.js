@@ -21,9 +21,10 @@ const Navbar=()=>{
             </button>
             <div className={`collapse navbar-collapse ${isCollapsed && 'show'}`} id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
+                {/* <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/" onClick={handleCollapse}>Home</Link>
-                </li>
+                </li> */}
+                <li className="nav-item"><Link className="nav-link" to="/voice" onClick={handleCollapse}>ASK FILTERED NEWS</Link></li>  
                 <li className="nav-item"><Link className="nav-link" to="/business" onClick={handleCollapse}>Business</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/world" onClick={handleCollapse}>World</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/national" onClick={handleCollapse}>National</Link></li>
@@ -35,7 +36,8 @@ const Navbar=()=>{
                 <li className="nav-item"><Link className="nav-link" to="/technology" onClick={handleCollapse}>Technology</Link></li>  
                 <li className="nav-item"><Link className="nav-link" to="/automobile" onClick={handleCollapse}>Automobile</Link></li>  
                 <li className="nav-item"><Link className="nav-link" to="/startup" onClick={handleCollapse}>StartUp</Link></li>  
-                <li className="nav-item"><Link className="nav-link" to="/miscellaneous" onClick={handleCollapse}>Miscellaneous</Link></li>       
+                <li className="nav-item"><Link className="nav-link" to="/miscellaneous" onClick={handleCollapse}>Miscellaneous</Link></li>
+                         
             </ul>
             </div>
         </div>

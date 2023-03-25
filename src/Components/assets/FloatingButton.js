@@ -8,7 +8,7 @@ const FloatingButton = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(SplashScreen);
+    navigate('/Hello');
   };
 
   useEffect(() => {
