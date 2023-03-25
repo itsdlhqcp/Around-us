@@ -38,7 +38,7 @@ function VoiceScreen() {
     <div style={{ marginBottom: '3rem' }}>
     <div className={classes.logoContainer}>
         {/* <img src={require('./image/logo.png')} className={classes.alanLogo} alt="News App logo"/> */}
-        <Typography variant='h4'>Conversational Voice Controlled News App</Typography>
+        <Typography variant='h4'>Conversational Voice</Typography>
     </div>
     <NewsCards articles={newsArticles} activeArticle={activeArticle} />
     <div className={classes.footer}><Typography variant='h6'>&#169; Dilhaque 2022</Typography></div>
