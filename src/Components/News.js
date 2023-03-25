@@ -25,8 +25,9 @@ const News = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://inshorts.deta.dev/news?category=${props.category}`);
-        // const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=492910a2d3eb4024a0d2c79dda65d0a6`);
+        const response = await axios.get(`https://vast-tor-50645.herokuapp.com/https://inshorts.deta.dev/news?category=${props.category}`);
+        // const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=492910a2d3eb4024a0d2c79dda65d0a6`);  -->insort api
+        //  cors header remover  https://vast-tor-50645.herokuapp.com/
         setLoader(false);
         setArticles(response.data.data);
       } catch (error) {

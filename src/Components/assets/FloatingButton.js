@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import SplashScreen from "../SplashScreen";
 
 const FloatingButton = () => {
   const [showButton, setShowButton] = useState(true);
   const [opacity, setOpacity] = useState(1);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    history.push("/new-page");
+    navigate(SplashScreen);
   };
 
   useEffect(() => {
@@ -31,8 +32,8 @@ const FloatingButton = () => {
           onClick={handleClick}
           style={{
             position: "fixed",
-            bottom: "20px",
-            right: "20px",
+            bottom: "30px",
+            right: "30px",
             borderRadius: "20%",
             backgroundColor: "#5A5A5A",
             color: "white",

@@ -6,6 +6,12 @@ IN latest version we are also planning to impliment additional new features to t
     ->like your favourite news and add it your readlater list
     ->Share news from this apk
     ->personally add some famous news with resourse and get points as with likes
+
+## To avoid proxy header problem we use cors middleware
+   Here is instruction how to diploy it on server for api's from dev.to :
+   https://dev.to/imiebogodson/fixing-the-cors-error-by-hosting-your-own-proxy-on-heroku-3lcb
+     
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
