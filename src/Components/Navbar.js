@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 
@@ -9,6 +9,23 @@ const Navbar=()=>{
   const handleCollapse = () => {
     setIsCollapsed(false);                          //this function closes the navbar after a content is selected
   }; 
+
+
+  // add event listener to document object to listen for click events
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (event.target.closest('.navbar') === null) {
+        setIsCollapsed(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    // clean up the event listener when component unmounts
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
     return (
       <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -36,8 +53,7 @@ const Navbar=()=>{
                 <li className="nav-item"><Link className="nav-link" to="/technology" onClick={handleCollapse}>Technology</Link></li>  
                 <li className="nav-item"><Link className="nav-link" to="/automobile" onClick={handleCollapse}>Automobile</Link></li>  
                 <li className="nav-item"><Link className="nav-link" to="/startup" onClick={handleCollapse}>StartUp</Link></li>  
-                <li className="nav-item"><Link className="nav-link" to="/miscellaneous" onClick={handleCollapse}>Miscellaneous</Link></li>
-                         
+                <li className="nav-item"><Link className="nav-link" to="/miscellaneous" onClick={handleCollapse}>Miscellaneous</Link></li>              
             </ul>
             </div>
         </div>

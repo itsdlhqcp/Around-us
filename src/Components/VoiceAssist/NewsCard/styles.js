@@ -16,7 +16,8 @@ export default createUseStyles({
     flexDirection: 'column',
     justifyContent: 'space-between',
     borderBottom: '10px solid white',
-    backgroundColor: '#d6ccd6'
+    backgroundColor: '#d6ccd6',
+    
   },
   activeCard: {
     borderBottom: '10px solid #704c70',

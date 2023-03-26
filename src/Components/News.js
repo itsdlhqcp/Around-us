@@ -11,16 +11,6 @@ const News = (props) => {
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
-              ///here with respect to value we chose from nav bar fetch and render specified data
-              //asynchronous fuction implimented in above code to sort error
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://inshorts.deta.dev/news?category=${props.category}`)
-  //     .then((response) => {
-  //       setLoader(false);
-  //       setArticles(response.data.data);
-  //     });
-  // }, );
 
   useEffect(() => {
     const fetchData = async () => {
