@@ -6,7 +6,6 @@ import NewsCards from './NewsCards/NewsCards';
 // import './SplashScreen.css'; // Import the CSS file for styling
 import useStyles from '../styles';
 import wordsToNumbers from 'words-to-numbers';
-import { Typography } from '@material-ui/core';
 
 function VoiceScreen() {
     const [newsArticles, setNewsArticles] = useState([]);
@@ -41,7 +40,7 @@ function VoiceScreen() {
         {/* <Typography variant='h4'>Conversational Voice</Typography> */}
     </div>
     <NewsCards articles={newsArticles} activeArticle={activeArticle} />
-    <div className={classes.footer}><Typography variant='h6'>&#169; Dilhaque 2022</Typography></div>
+    <p>@Dilhaque 2023</p>
     
     
 </div>

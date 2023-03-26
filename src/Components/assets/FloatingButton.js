@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import SplashScreen from "../SplashScreen";
+
 
 const FloatingButton = () => {
   const [showButton, setShowButton] = useState(true);

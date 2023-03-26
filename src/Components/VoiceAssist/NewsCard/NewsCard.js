@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createRef } from 'react';
-import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
+import { Card, Button } from 'react-bootstrap';
 import classNames from 'classnames';
 
 import useStyles from './styles.js';
@@ -21,23 +21,27 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
     
     return (
         <Card ref={elRefs[i]} className={classNames(classes.card, activeArticle === i ? classes.activeCard : null)}>
-            <CardActionArea href={url} target="_blank">
-                <CardMedia className={classes.media} image={ urlToImage || 'https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png'}/>
-                <div className={classes.details}>
-                    <Typography variant="body2" color="textSecondary" component="h2">{(new Date(publishedAt)).toDateString()}</Typography>
-                    <Typography variant="body2" color="textSecondary" component="h2">{source.name}</Typography>
-                </div>
-                <Typography className={classes.title} gutterBottom variant="h5">{title}</Typography>
-                <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">{description}</Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary">Learn More</Button>
-                <Typography variant="h5" color="textSecondary">{i + 1}</Typography>
-            </CardActions>
+          <Card.Img variant="top" src={urlToImage || 'https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png'} className={classes.media} />
+          <Card.Body>
+            <Card.Title className={classes.title}>{title}</Card.Title>
+            <Card.Text>{description}</Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">
+              <div className={classes.details}>
+                <span>{(new Date(publishedAt)).toDateString()}</span>
+                <span>{source.name}</span>
+              </div>
+              <div className={classes.cardActions}>
+                <Button size="sm" href={url} target="_blank" variant="primary" className={classes.button}>
+                  Learn More
+                </Button>
+                <span className={classes.cardIndex}>{i + 1}</span>
+              </div>
+            </small>
+          </Card.Footer>
         </Card>
-    )
+      );
 }
 
 export default NewsCard;

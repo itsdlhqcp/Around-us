@@ -1,8 +1,9 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { createUseStyles } from 'react-jss';
 
-export default makeStyles({
+export default createUseStyles({
   media: {
     height: 250,
+    objectFit: 'cover',
   },
   border: {
     border: 'solid',
@@ -30,10 +31,12 @@ export default makeStyles({
   },
   title: {
     padding: '0 16px',
+    fontWeight: 'bold',
   },
   cardActions: {
     padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });

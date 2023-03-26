@@ -1,10 +1,9 @@
-import { makeStyles } from '@material-ui/core/styles';
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-</style>
-export default makeStyles({
+import { createUseStyles } from 'react-jss';
+
+export default createUseStyles({
   media: {
     height: 250,
+    objectFit: 'cover',
   },
   border: {
     border: 'solid',
@@ -17,13 +16,8 @@ export default makeStyles({
     flexDirection: 'column',
     justifyContent: 'space-between',
     borderBottom: '10px solid white',
-    backgroundColor: '#90EE90'
+    backgroundColor: '#d6ccd6'
   },
-  infoCard:{
-    display:'flex',
-    flexDirection:'column',
-    textAlign:'center'
-},
   activeCard: {
     borderBottom: '10px solid #704c70',
   },
@@ -37,10 +31,12 @@ export default makeStyles({
   },
   title: {
     padding: '0 16px',
+    fontWeight: 'bold',
   },
   cardActions: {
     padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
