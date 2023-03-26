@@ -5,7 +5,7 @@ import { useState } from 'react';
 import NewsCards from './NewsCards/NewsCards';
 import wordsToNumbers from 'words-to-numbers';
 
-function VoiceScreen() {
+const VoiceScreen =() => {
     const [newsArticles, setNewsArticles] = useState([]);
     const [activeArticle, setActiveArticle] = useState(-1);
     
