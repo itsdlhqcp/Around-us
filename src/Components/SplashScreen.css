@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .splash-screen {
     display: flex;
     flex-direction: column;

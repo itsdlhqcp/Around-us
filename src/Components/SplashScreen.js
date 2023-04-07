@@ -6,7 +6,7 @@ function SplashScreen() {
   return (
     <>
     <div className="logo-wrapper">
-    <img src={logo} alt="Logo" className="logo" width="175" height="175"/>
+    <img src={logo} alt="Logo" className="logo" width="180" height="182"/>
     </div>
     <h1 style={{ color: 'red', fontFamily: 'italic' }}>Hot Headlines</h1>
     <div className="loading-wrapper">
@@ -14,6 +14,9 @@ function SplashScreen() {
     <div className="loading-dot" />
     <div className="loading-dot" />
   </div>
+  <footer style={{ fontSize: '0.8rem', marginTop: '10rem' }}>
+        © 2023 developed by dlhq. All rights reserved.
+      </footer>
   </>
   );
 }
