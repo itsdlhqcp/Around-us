@@ -8,7 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import SplashScreen from './Components/SplashScreen';
-import FloatingButton from './Components/assets/FloatingButton';
+// import FloatingButton from './Components/assets/FloatingButton';
 import VoiceScreen from './Components/VoiceAssist/VoiceScreen';
 
 
@@ -46,7 +46,7 @@ import VoiceScreen from './Components/VoiceAssist/VoiceScreen';
              <Route exact path="/world"element={<News key="world" country="in" category="world"/>}></Route>
              <Route exact path="/voice"  element={<VoiceScreen/>} />
          </Routes>
-         <FloatingButton />
+         {/* <FloatingButton /> */}
          </Router>
         }
        
