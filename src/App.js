@@ -10,7 +10,8 @@ import {
 import SplashScreen from './Components/SplashScreen';
 // import FloatingButton from './Components/assets/FloatingButton';
 import VoiceScreen from './Components/VoiceAssist/VoiceScreen';
-import NewPage from './Components/newPage';
+import AboutUs from './Components/About';
+import AskGpt from './Components/Gpt';
 
 
                  ///components such as navbar and other data fetch on cards are rendred with routing here
@@ -46,8 +47,8 @@ import NewPage from './Components/newPage';
              <Route exact path="/india"element={<News key="india" country="in" category="india"/>}></Route>
              <Route exact path="/world"element={<News key="world" country="in" category="world"/>}></Route>
              <Route exact path="/voice"element={<VoiceScreen/>} />
-             <Route exact path="/gpt"element={<NewPage/>} />
-             <Route exact path="/about"element={<NewPage/>} />
+             <Route exact path="/gpt"element={<AskGpt/>} />
+             <Route exact path="/about"element={<AboutUs/>} />
          </Routes>
          {/* <FloatingButton /> */}
          </Router>
