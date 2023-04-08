@@ -41,17 +41,18 @@ const Navbar=()=>{
                 {/* <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/" onClick={handleCollapse}>Home</Link>
                 </li> */}
+                <li className="nav-item"><Link className="nav-link" to="/gpt" onClick={handleCollapse}>TRY GPT VOICE</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/voice" onClick={handleCollapse}>ASK FILTERED NEWS</Link></li>  
-                <li className="nav-item"><Link className="nav-link" to="/business" onClick={handleCollapse}>Business</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/world" onClick={handleCollapse}>World</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/national" onClick={handleCollapse}>National</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/india" onClick={handleCollapse}>India</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/national" onClick={handleCollapse}>National</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/politics" onClick={handleCollapse}>Politics</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/entertainment" onClick={handleCollapse}>Entertainment</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/science" onClick={handleCollapse}>Science</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/business" onClick={handleCollapse}>Business</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/sports" onClick={handleCollapse}>Sports</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/technology" onClick={handleCollapse}>Technology</Link></li>  
-                <li className="nav-item"><Link className="nav-link" to="/automobile" onClick={handleCollapse}>Automobile</Link></li>  
+                <li className="nav-item"><Link className="nav-link" to="/science" onClick={handleCollapse}>Science</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/technology" onClick={handleCollapse}>Technology</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/automobile" onClick={handleCollapse}>Automobile</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/entertainment" onClick={handleCollapse}>Entertainment</Link></li> 
                 <li className="nav-item"><Link className="nav-link" to="/startup" onClick={handleCollapse}>StartUp</Link></li>  
                 <li className="nav-item"><Link className="nav-link" to="/miscellaneous" onClick={handleCollapse}>Miscellaneous</Link></li>              
             </ul>
