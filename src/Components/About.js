@@ -7,7 +7,7 @@ function AboutUs() {
       <div className="container my-5">
         <div className="card text-white bg-dark my-5">
           <div className="card-header border-light">
-            <b> About Us</b>
+            <b> <span style={{ color: 'blue', fontWeight: 'bold' }}>ABOUT US</span></b>
           </div>
           <div className="card-body">
             <ul style={{ listStyleType: "square" }}>
