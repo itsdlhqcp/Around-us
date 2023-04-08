@@ -14,7 +14,7 @@ function SplashScreen() {
     <div className="loading-dot" />
     <div className="loading-dot" />
   </div>
-  <footer style={{ fontSize: '0.8rem', marginTop: '10rem' }}>
+  <footer style={{ fontSize: '0.8rem', marginTop: '17rem' }}>
         © 2023 developed by dlhq. All rights reserved.
       </footer>
   </>
