@@ -5,6 +5,7 @@ import { v4 } from "uuid";
 import axios from "axios";
 import "./News.css";
 import { InfinitySpin } from "react-loader-spinner";
+
 const News = (props) => {
   const [articles, setArticles] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -15,29 +16,63 @@ const News = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        let cachedData = localStorage.getItem(`${props.category}_news`);
+        if (cachedData) {
+          // Data is present in local storage
+          const parsedData = JSON.parse(cachedData);
+          const timestamp = parsedData.timestamp;
+          const data = parsedData.data;
+
+          if (Date.now() - timestamp <= 1800000) {
+            // Data is fresh (less than or equal to 30 minutes old)
+            setArticles(data);
+            setLoader(false);
+            return;
+          } else {
+            // Data is stale (more than 30 minutes old)
+            localStorage.removeItem(`${props.category}_news`);
+          }
+        }
+
+        // Fetch data from API
         const response = await axios.get(`https://vast-tor-50645.herokuapp.com/https://inshorts.deta.dev/news?category=${props.category}`);
-        // const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=492910a2d3eb4024a0d2c79dda65d0a6`);  -->insort api
-        //  cors header remover  https://vast-tor-50645.herokuapp.com/
         setLoader(false);
         setArticles(response.data.data);
+
+        // Save data to local storage
+        localStorage.setItem(
+          `${props.category}_news`,
+          JSON.stringify({
+            timestamp: Date.now(),
+            data: response.data.data,
+          })
+        );
       } catch (error) {
         console.error(error);
       }
     };
     fetchData();
   }, [props.category]);
-  
+
   return (
-    <div >
-      {
-      loader ? (
-        <div className="myloader"> <InfinitySpin width="200" color="#000" /></div>
+    <div>
+      {loader ? (
+        <div className="myloader">
+          <InfinitySpin width="200" color="#000" />
+        </div>
       ) : (
-        <div className="container my-3" style={{ margin: "1px 0px" }}>
+        <div
+          className="container my-3"
+          style={{ margin: "1px 0px" }}
+        >
           <span class="small-orange-double-underline">
-          <h2 className="text-center " style={{ margin: "66px 0px 0px 0px"  }}>
-            News - Top {capitalizeFirstLetter(props.category)} Headlines
-          </h2>
+            <h2
+              className="text-center "
+              style={{ margin: "66px 0px 0px 0px" }}
+            >
+              News - Top{" "}
+              {capitalizeFirstLetter(props.category)} Headlines
+            </h2>
           </span>
           <div className="row">
             {articles?.map((element) => {
@@ -75,7 +110,3 @@ News.propTypes = {
 };
 
 export default News;
-
-
-
-/// https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=492910a2d3eb4024a0d2c79dda65d0a6

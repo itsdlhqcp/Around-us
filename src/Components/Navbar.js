@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar=()=>{
     //component navbar is rendered here
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const location = useLocation();
 
   const handleCollapse = () => {
-    setIsCollapsed(false);                          //this function closes the navbar after a content is selected
+    setIsCollapsed(false);             //this function closes the navbar after a content is selected
   }; 
 
 
@@ -21,11 +22,22 @@ const Navbar=()=>{
 
     document.addEventListener('click', handleClickOutside);
 
+    const handlePopState = () => {
+      setIsCollapsed(false); // close navbar on back button press
+    }
+
+    window.addEventListener('popstate', handlePopState);
+
     // clean up the event listener when component unmounts
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
+
+     useEffect(() => {
+       setIsCollapsed(false); // close navbar on location change
+        }, [location]);
+
     return (
       <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
