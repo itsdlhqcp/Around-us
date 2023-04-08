@@ -62,7 +62,7 @@ const Navbar=()=>{
                 {/* <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/" onClick={handleCollapse}>Home</Link>
                 </li> */}
-                <li className="nav-item"><Link className="nav-link" to="/gpt" onClick={handleCollapse}>TRY GPT VOICE</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/gpt" onClick={handleCollapse}>&lt;--TRY GPT VOICE AI--&gt;</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/voice" onClick={handleCollapse}>ASK FILTERED NEWS</Link></li>  
                 <li className="nav-item"><Link className="nav-link" to="/world" onClick={handleCollapse}>World</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/india" onClick={handleCollapse}>India</Link></li>
@@ -75,7 +75,8 @@ const Navbar=()=>{
                 <li className="nav-item"><Link className="nav-link" to="/automobile" onClick={handleCollapse}>Automobile</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/entertainment" onClick={handleCollapse}>Entertainment</Link></li> 
                 <li className="nav-item"><Link className="nav-link" to="/startup" onClick={handleCollapse}>StartUp</Link></li>  
-                <li className="nav-item"><Link className="nav-link" to="/miscellaneous" onClick={handleCollapse}>Miscellaneous</Link></li>              
+                <li className="nav-item"><Link className="nav-link" to="/miscellaneous" onClick={handleCollapse}>Miscellaneous</Link></li>  
+                <li className="nav-item"><Link className="nav-link" to="/about" onClick={handleCollapse}>About Us</Link></li>            
             </ul>
             </div>
         </div>

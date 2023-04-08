@@ -47,6 +47,7 @@ import NewPage from './Components/newPage';
              <Route exact path="/world"element={<News key="world" country="in" category="world"/>}></Route>
              <Route exact path="/voice"element={<VoiceScreen/>} />
              <Route exact path="/gpt"element={<NewPage/>} />
+             <Route exact path="/about"element={<NewPage/>} />
          </Routes>
          {/* <FloatingButton /> */}
          </Router>
