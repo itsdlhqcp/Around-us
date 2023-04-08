@@ -7,47 +7,56 @@ const Navbar=()=>{
     const [isCollapsed, setIsCollapsed] = useState(false);
     const location = useLocation();
 
-  const handleCollapse = () => {
-    setIsCollapsed(false);             //this function closes the navbar after a content is selected
-  }; 
+    const handleCollapse = () => {
+        setIsCollapsed(false);             //this function closes the navbar after a content is selected
+    }; 
 
-
-  // add event listener to document object to listen for click events
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (event.target.closest('.navbar') === null) {
-        setIsCollapsed(false);
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-
-    const handlePopState = () => {
-      setIsCollapsed(false); // close navbar on back button press
+    const handleTimeout = () => {
+        setTimeout(() => {
+            setIsCollapsed(false);
+        }, 5000);
     }
 
-    window.addEventListener('popstate', handlePopState);
+    // add event listener to document object to listen for click events
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (event.target.closest('.navbar') === null) {
+                setIsCollapsed(false);
+            }
+        };
 
-    // clean up the event listener when component unmounts
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
+        document.addEventListener('click', handleClickOutside);
 
-     useEffect(() => {
-       setIsCollapsed(false); // close navbar on location change
-        }, [location]);
+        const handlePopState = () => {
+            setIsCollapsed(false); // close navbar on back button press
+        }
+
+        window.addEventListener('popstate', handlePopState);
+
+        // clean up the event listener when component unmounts
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
+    useEffect(() => {
+        setIsCollapsed(false); // close navbar on location change
+    }, [location]);
 
     return (
-      <div>
+        <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid">
-            <Link className="navbar-brand" to="/" onClick={handleCollapse}>News</Link>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-            onClick={() => setIsCollapsed(!isCollapsed)}>
-            <span className="navbar-toggler-icon"></span>
-            </button>
+                <div className="container-fluid">
+                    <Link className="navbar-brand" to="/" onClick={handleCollapse}>News</Link>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        onClick={() => {
+                            setIsCollapsed(!isCollapsed);
+                            handleTimeout();
+                        }}
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
             <div className={`collapse navbar-collapse ${isCollapsed && 'show'}`} id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 {/* <li className="nav-item">
