@@ -4,3 +4,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.nav-link {
+    border-top: 1px solid grey;
+  }
+  
+
+  

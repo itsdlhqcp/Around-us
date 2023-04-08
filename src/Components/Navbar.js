@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'
+import "./News.css"
 
 const Navbar=()=>{
     //component navbar is rendered here
@@ -45,7 +46,7 @@ const Navbar=()=>{
 
     return (
         <div>
-            <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark bg-secondary">
+            <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/" onClick={handleCollapse}>TopNews</Link>
                     <button 
@@ -68,8 +69,8 @@ const Navbar=()=>{
                 {/* <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/" onClick={handleCollapse}>Home</Link>
                 </li> */}
-                <li className="nav-item"><Link className="nav-link" to="/gpt" onClick={handleCollapse}>&lt;--TRY GPT VOICE AI--&gt;</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/voice" onClick={handleCollapse}>ASK FILTERED NEWS</Link></li>  
+                <li className="nav-item"><Link className="nav-link" to="/gpt" onClick={handleCollapse}><span style={{ color: 'green', fontWeight: 'bold', fontStyle: 'italic' }}>&lt;--TRY GPT VOICE AI--&gt;</span></Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/voice" onClick={handleCollapse}><span style={{ color: '#ADD8E6', fontWeight: 'bold' }}>ASK FILTERED NEWS</span></Link></li>  
                 <li className="nav-item"><Link className="nav-link" to="/world" onClick={handleCollapse}>World</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/india" onClick={handleCollapse}>India</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/national" onClick={handleCollapse}>National</Link></li>
