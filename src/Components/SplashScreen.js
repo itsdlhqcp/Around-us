@@ -8,7 +8,7 @@ function SplashScreen() {
     <div className="logo-wrapper">
     <img src={logo} alt="Logo" className="logo" width="180" height="182"/>
     </div>
-    <h1 style={{ color: 'red', fontFamily: 'italic' }}>Hot Headlines</h1>
+    <h1 style={{ color: 'red', fontFamily: 'italic' }}>Loading TopNews</h1>
     <div className="loading-wrapper">
     <div className="loading-dot" />
     <div className="loading-dot" />
