@@ -8,13 +8,13 @@ const Navbar=()=>{
     const location = useLocation();
 
     const handleCollapse = () => {
-        setIsCollapsed(false);             //this function closes the navbar after a content is selected
+        setIsCollapsed(false);       //this function closes the navbar after a content is selected
     }; 
 
     const handleTimeout = () => {
         setTimeout(() => {
             setIsCollapsed(false);
-        }, 5000);
+        }, 11000);
     }
 
     // add event listener to document object to listen for click events
@@ -45,7 +45,7 @@ const Navbar=()=>{
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark bg-secondary">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/" onClick={handleCollapse}>News</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
