@@ -34,7 +34,9 @@ const VoiceScreen =() => {
   return (
     <div style={{ marginBottom: '3rem' }}>
     <NewsCards articles={newsArticles} activeArticle={activeArticle} />
-    <p>@Dilhaque 2023</p>
+    <footer style={{ fontSize: '0.8rem' }}>
+        © 2023 developed by dlhq. All rights reserved.
+      </footer>
     </div>
   );
 }
