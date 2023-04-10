@@ -4,6 +4,15 @@ const infoCards = [
   { color: '#808080', title: 'Get World News', link: '/world' },
   { color: '#808080', title: 'Get News from India', link: '/india' },
   { color: '#808080', title: 'Get National News', link: '/national' },
+  { color: '#808080', title: 'Get Political News', link: '/politic' },
+  { color: '#808080', title: 'Get Buissness News', link: '/business' },
+  { color: '#808080', title: 'Get Sports News', link: '/sports' },
+  { color: '#808080', title: 'Get Science News', link: '/science' },
+  { color: '#808080', title: 'Get Technological News', link: '/technology' },
+  { color: '#808080', title: 'Get Automobiles News', link: '/automobile' },
+  { color: '#808080', title: 'Get Entertainment News', link: '/entertainment' },
+  { color: '#808080', title: 'Get StartUp News', link: '/startup' },
+  { color: '#808080', title: 'Get Some Miscillaneous News', link: '/miscellaneous' },
 ];
 
 const NavCard = () => {
