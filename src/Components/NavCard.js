@@ -2,9 +2,9 @@ import { Container, Carousel } from 'react-bootstrap';
 
 
 const infoCards = [
-  { color: '#808080', title: 'News by Countries' },
-  { color: '#808080', title: 'News by Categories' },
-  { color: '#808080', title: 'News by Terms' },
+  { color: '#808080', title: 'Get World News' },
+  { color: '#808080', title: 'Get News from India' },
+  { color: '#808080', title: 'Get National News' },
 ];
 
 const NavCard = () => {
@@ -15,7 +15,7 @@ const NavCard = () => {
             {infoCards.map((infoCard, i) => (
               <Carousel.Item key={i}>
                 <div className="p-1" style={{ backgroundColor: infoCard.color }}>
-                  <h4>{infoCard.title}</h4>
+                  <h4 style={{ margin: 'auto' }}>{infoCard.title}</h4>
                 </div>
               </Carousel.Item>
             ))}

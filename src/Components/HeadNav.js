@@ -1,21 +1,22 @@
 import { Container, Carousel } from 'react-bootstrap';
 
-
 const infoCards = [
-  { color: '', title: 'Try Gpt Voice AI' },
-  { color: '', title: 'Ask Filtered News' },
+  { color: '#8585ad', title: 'Try Gpt Voice AI', link: '/gpt' },
+  { color: '#8585ad', title: 'Ask Filtered News', link: '/voice' },
 ];
 
 const HeadNav = () => {
     return (
       <div style={{ margin: "66px 0px 0px 0px" }}>
         <Container>
-          <Carousel interval={3000} pause={false} controls={false} indicators={false}>
+          <Carousel interval={6000} pause={false} controls={false} indicators={false}>
             {infoCards.map((infoCard, i) => (
               <Carousel.Item key={i}>
-                <div className="p-1" style={{ backgroundColor: infoCard.color }}>
-                  <h4>{infoCard.title}</h4>
-                </div>
+                <a href={infoCard.link}style={{ textDecoration: 'none' }}>
+                  <div className="p-1" style={{ backgroundColor: infoCard.color}}>
+                    <h4 style={{ margin: 'auto', fontStyle: 'helvetica' }}>{infoCard.title}</h4>
+                  </div>
+                </a>
               </Carousel.Item>
             ))}
           </Carousel>
@@ -24,6 +25,4 @@ const HeadNav = () => {
     );
 };
 
-
-
-export default  HeadNav;
+export default HeadNav;
