@@ -12,6 +12,8 @@ import SplashScreen from './Components/SplashScreen';
 import VoiceScreen from './Components/VoiceAssist/VoiceScreen';
 import AboutUs from './Components/About';
 import AskGpt from './Components/Gpt';
+import NavCard from './Components/NavCard';
+import HeadNav from './Components/HeadNav';
 
 
                  ///components such as navbar and other data fetch on cards are rendred with routing here
@@ -32,6 +34,8 @@ import AskGpt from './Components/Gpt';
          <div className="navbar-container">
          <Navbar />
          </div>
+         <HeadNav/>
+         <NavCard />
          <Routes>
              <Route exact path="/" element={<News key="general" country="in" category="all"/>}></Route>
              <Route exact path="/business" element={<News key="business" country="in" category="business"/>}></Route>
@@ -50,6 +54,7 @@ import AskGpt from './Components/Gpt';
              <Route exact path="/gpt"element={<AskGpt/>} />
              <Route exact path="/about"element={<AboutUs/>} />
          </Routes>
+        
          {/* <FloatingButton /> */}
          </Router>
         }
