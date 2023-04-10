@@ -11,9 +11,9 @@ const NewsCards = ({ articles, activeArticle }) => {
 
   if (!articles.length) {
     return (
-      <div style={{ margin: "66px 0px 0px 0px" }}>
+      <div style={{ margin: "0px 0px 0px 0px" }}>
         <Container>
-          <Carousel interval={3000} pause={false}>
+          <Carousel interval={5000} pause={false}>
             {infoCards.map((infoCard, i) => (
               <Carousel.Item key={i}>
                 <div className="p-3" style={{ backgroundColor: infoCard.color }}>
