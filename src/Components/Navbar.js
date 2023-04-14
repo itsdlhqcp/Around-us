@@ -44,29 +44,7 @@ const Navbar=()=>{
         setIsCollapsed(false); // close navbar on location change
     }, [location]);
 
-    //swipe off function
-
-    useEffect(() => {
-        const handleTouchStart = (event) => {
-          if (event.touches.length === 1) {
-            setIsCollapsed(false);
-          }
-        };
-      
-        const handleTouchEnd = (event) => {
-          if (event.changedTouches.length === 1) {
-            setIsCollapsed(false);
-          }
-        };
-      
-        document.addEventListener('touchstart', handleTouchStart);
-        document.addEventListener('touchend', handleTouchEnd);
-      
-        return () => {
-          document.removeEventListener('touchstart', handleTouchStart);
-          document.removeEventListener('touchend', handleTouchEnd);
-        };
-      }, []);
+  
       
 
     return (
