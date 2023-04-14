@@ -14,6 +14,7 @@ import AboutUs from './Components/About';
 import AskGpt from './Components/Gpt';
 import NavCard from './Components/NavCard';
 import HeadNav from './Components/HeadNav';
+import ScrollTop from './Components/ScrollTop';
 
 
                  ///components such as navbar and other data fetch on cards are rendred with routing here
@@ -54,6 +55,7 @@ import HeadNav from './Components/HeadNav';
              <Route exact path="/gpt"element={<AskGpt/>} />
              <Route exact path="/about"element={<AboutUs/>} />
          </Routes>
+         <ScrollTop/>
         
          {/* <FloatingButton /> */}
          </Router>
