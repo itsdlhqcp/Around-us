@@ -1,6 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import NewsCard from '../NewsCard/NewsCard';
-import { useState } from 'react';
 
 const infoCards = [
   { color: '#B3B6B7', title: 'News by Countries', info: 'India, Australia, France, China, United States, Germany, Japan, Saudi Arabia', text: 'Give me the latest news from India' },
@@ -10,11 +9,9 @@ const infoCards = [
 ];
 
 const NewsCards = ({ articles, activeArticle }) => {
-  const [showInfoCards, setShowInfoCards] = useState(!articles.length);
+ 
 
-  const handleInfoCardsDismiss = () => setShowInfoCards(false);
-
-  if (showInfoCards) {
+  if (!articles.length) {
     return (
       <Container>
         <Row className="justify-content-center mt-3">
@@ -37,7 +34,7 @@ const NewsCards = ({ articles, activeArticle }) => {
             </Col>
           ))}
         </Row>
-        <button onClick={handleInfoCardsDismiss}>Dismiss Info Cards</button>
+        
       </Container>
     );
   }

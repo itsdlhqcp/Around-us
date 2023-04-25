@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import'../index.css';
 
 const Newsitem = (props) => {
   const { title, description, imageUrl, redMore, date, key } = props;
@@ -25,7 +26,7 @@ const Newsitem = (props) => {
 
   return (
     <div key={key} className='my-3'>
-      <div className='card' style={{ width: '21rem' }}>
+      <div className='card'>
         <img
           src={imageUrl}
           className='card-img-top'

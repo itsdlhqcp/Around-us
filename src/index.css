@@ -22,3 +22,21 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 html {
     scroll-behavior: smooth;
 }
+
+
+.card {
+    width: 21rem;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 18rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card {
+      width: 100%;
+    }
+  }
+  
