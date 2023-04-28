@@ -2,10 +2,14 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'
 import "./News.css"
+import LanguageSwitch from './LanguageSwitch';
+
+
 
 const Navbar=()=>{
     //component navbar is rendered here
     const [isCollapsed, setIsCollapsed] = useState(false);
+     
     const location = useLocation();
 
     const handleCollapse = () => {
@@ -44,6 +48,7 @@ const Navbar=()=>{
         setIsCollapsed(false); // close navbar on location change
     }, [location]);
 
+   
   
       
 
@@ -51,8 +56,8 @@ const Navbar=()=>{
         <div>
             <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/" onClick={handleCollapse}>TopNews</Link>
-                    <button 
+                
+                <button 
                     className="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse" 
@@ -67,6 +72,10 @@ const Navbar=()=>{
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
+                    <Link className="navbar-brand" to="/" onClick={handleCollapse}>TopNews</Link>
+                    
+                    <LanguageSwitch/>
+                    
             <div className={`collapse navbar-collapse ${isCollapsed && 'show'}`} id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 {/* <li className="nav-item">

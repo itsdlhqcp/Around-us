@@ -2,11 +2,18 @@ import React, { useEffect, useState } from 'react';
 import'../index.css';
 import { Modal, Button } from 'react-bootstrap';
 
+
 const Newsitem = (props) => {
   const { title, description, imageUrl, redMore, date, key } = props;
   const [showDescription, setShowDescription] = useState(false);
   const [source, setSource] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [showLink, setShowLink] = useState(false);
+  
+  const closeModal = () => {
+    setShowModal(false);
+  };
+ 
 
   const handleFullArticle = () => {
     setShowModal(true);
@@ -41,6 +48,7 @@ const Newsitem = (props) => {
     }
   };
 
+  
   return (
     <div key={key} className='my-3'>
       <div className='card'>
@@ -93,21 +101,42 @@ const Newsitem = (props) => {
           </button>
         </div>
       </div>
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
-  <Modal.Header closeButton>
-    <Modal.Title>{title}</Modal.Title>
-  </Modal.Header>
-  <Modal.Body>
-      <iframe title="Link" src={redMore} style={{ width: '100%', height: '70vh' }} />
-  </Modal.Body>
-  <Modal.Footer>
+
+<Modal show={showModal} onHide={closeModal} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {(<iframe title="Link" src={redMore} style={{ width: '100%', height: '70vh' }} />) || (
+            <div style={{ textAlign: 'center' }}>
+              <p>Unable to display content in iframe. Click below to load content in a new modal:</p>
+              <Button variant="primary" >
+                Open AJAX Modal
+              </Button>
+            </div>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+        {showLink ? (
+      <Button variant="secondary" onClick={() => setShowLink(false)}>
+        Back
+      </Button>
+    ) : (
+      <a
+      rel='noreferrer'
+      href={redMore}
+      target='_blank'
+      className='btn btn-sm btn-dark ms-2'
+    >
+      Read Full Article
+    </a>
+    )}
     <Button variant="secondary" onClick={() => setShowModal(false)}>
       Close
     </Button>
-  </Modal.Footer>
-</Modal>
-
-    </div>
+        </Modal.Footer>
+      </Modal> 
+      </div>
   );
 };
 
