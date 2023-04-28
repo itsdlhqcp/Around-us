@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import'../index.css';
+import { Modal, Button } from 'react-bootstrap';
 
 const Newsitem = (props) => {
   const { title, description, imageUrl, redMore, date, key } = props;
   const [showDescription, setShowDescription] = useState(false);
   const [source, setSource] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
+  const handleFullArticle = () => {
+    setShowModal(true);
+  };
 
   const handleReadMore = () => {
     setShowDescription(!showDescription);
@@ -72,14 +78,13 @@ const Newsitem = (props) => {
           >
             {showDescription ? 'Read Less' : 'Read More'}
           </button>
-          <a
-            rel='noreferrer'
-            href={redMore}
-            target='_blank'
+          <button
             className='btn btn-sm btn-dark ms-2'
+            onClick={handleFullArticle}
           >
             Read Full Article
-          </a>
+          </button>
+
           <button
             className='btn btn-outline-primary btn-sm ms-2'
             onClick={handleShare}
@@ -88,6 +93,20 @@ const Newsitem = (props) => {
           </button>
         </div>
       </div>
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+  <Modal.Header closeButton>
+    <Modal.Title>{title}</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+      <iframe title="Link" src={redMore} style={{ width: '100%', height: '70vh' }} />
+  </Modal.Body>
+  <Modal.Footer>
+    <Button variant="secondary" onClick={() => setShowModal(false)}>
+      Close
+    </Button>
+  </Modal.Footer>
+</Modal>
+
     </div>
   );
 };
