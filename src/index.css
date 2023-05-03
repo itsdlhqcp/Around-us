@@ -41,3 +41,26 @@ html {
     }
   }
   
+
+  .language-switcher {
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    padding: 1.4px;
+    background-color: black; /* set the background color to black */
+  }
+  
+  .language-switcher select {
+    color: white; /* set the font color to white */
+    background-color: black; /* set the background color to black */
+  }
+  
+  .navbar-toggler {
+    border-width: 2px; /* increase the border width as desired */
+    border-style: solid; /* set the border style to solid */
+    border-color: grey; /* set the border color to your desired color */
+  }
+
+  .language-switcher {
+  font-size: 12px; /* reduce the font size as desired */
+  /* reduce the width as desired */
+}

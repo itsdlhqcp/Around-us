@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'
 import "./News.css"
-import LanguageSwitch from './LanguageSwitch';
+import LanguageSwitcherx from './TransSwitch';
+
 
 
 
@@ -56,9 +57,13 @@ const Navbar=()=>{
         <div>
             <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
                 <div className="container-fluid">
+                <Link className="navbar-brand" to="/" onClick={handleCollapse}>🆃 🅽 TopNews</Link>
                 
+                <div className="d-flex align-items-center">
+                <LanguageSwitcherx/>
+             
                 <button 
-                    className="navbar-toggler"
+                    className="navbar-toggler ms-3"
                     type="button"
                     data-bs-toggle="collapse" 
                     data-bs-target="#navbarSupportedContent"
@@ -72,9 +77,11 @@ const Navbar=()=>{
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <Link className="navbar-brand" to="/" onClick={handleCollapse}>TopNews</Link>
+                </div>
+               
                     
-                    <LanguageSwitch/>
+                    
+                  
                     
             <div className={`collapse navbar-collapse ${isCollapsed && 'show'}`} id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">

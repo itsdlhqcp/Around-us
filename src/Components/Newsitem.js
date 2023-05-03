@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import'../index.css';
 import { Modal, Button } from 'react-bootstrap';
-
+import translate from "translate";
 
 const Newsitem = (props) => {
   const { title, description, imageUrl, redMore, date, key } = props;
@@ -9,6 +9,23 @@ const Newsitem = (props) => {
   const [source, setSource] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [showLink, setShowLink] = useState(false);
+  const [translatedTitle, setTranslatedTitle] = useState("");
+  const [translatedDescription, setTranslatedDescription] = useState("");
+
+
+
+
+  useEffect(() => {
+    const translateTitleAndDescription = async () => {
+      const [translatedTitle, translatedDescription] = await Promise.all([
+        translate(title, { to: "ml" }),
+        translate(description, { to: "ml" }),
+      ]);
+      setTranslatedTitle(translatedTitle);
+      setTranslatedDescription(translatedDescription);
+    };
+    translateTitleAndDescription();
+  }, [title, description]);
   
   const closeModal = () => {
     setShowModal(false);
@@ -75,8 +92,8 @@ const Newsitem = (props) => {
         </div>
        
         <div className='card-body'>
-          <h5 className='card-title'>{title}</h5>
-          {showDescription && <p className='card-text'>{description}</p>}
+          <h5 className='card-title'>{translatedTitle || title}</h5>
+          {showDescription && <p className='card-text'>{translatedDescription || description}</p>}
           <p className='card-text'>
             <small className='text-muted'>{date}</small>
           </p>
