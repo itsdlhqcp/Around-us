@@ -18,8 +18,8 @@ const Newsitem = (props) => {
   useEffect(() => {
     const translateTitleAndDescription = async () => {
       const [translatedTitle, translatedDescription] = await Promise.all([
-        translate(title, { to: "ml" }),
-        translate(description, { to: "ml" }),
+        translate(title, { to: "en" }),
+        translate(description, { to: "en" }),
       ]);
       setTranslatedTitle(translatedTitle);
       setTranslatedDescription(translatedDescription);
