@@ -9,8 +9,29 @@ import { InfinitySpin } from "react-loader-spinner";
 const News = (props) => {
   const [articles, setArticles] = useState([]);
   const [loader, setLoader] = useState(true);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [filteredArticles, setFilteredArticles] = useState([]);
+  const [searchBarVisible, setSearchBarVisible] = useState(false);
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  useEffect(() => {
+    const keyword = searchKeyword.toLowerCase();
+    const filtered = articles.filter(
+      (article) =>
+        article.title.toLowerCase().includes(keyword) ||
+        article.content.toLowerCase().includes(keyword) 
+    );
+    setFilteredArticles(filtered);
+  }, [searchKeyword, articles]);
+
+  const handleSearchChange = (e) => {
+    setSearchKeyword(e.target.value);
+  };
+
+  const handleSearchIconClick = () => {
+    setSearchBarVisible(!searchBarVisible);
   };
 
   useEffect(() => {
@@ -64,34 +85,68 @@ const News = (props) => {
       ) : (
         <div
           className="container my-3"
-          style={{ margin: "1px 0px" }}
+          style={{ margin: "0px 1px" }}
         >
           <span class="small-orange-double-underline">
             <h2
               className="text-center "
-              style={{ margin: "0px 0px 0px 0px" }}
+              style={{ margin: "0px 0px 7px 0px" }}
             >
               News - Top{" "}
-              {capitalizeFirstLetter(props.category)} Headlines
+              {capitalizeFirstLetter(props.category)} Headlines --
+              <span
+              className="search-icon"
+              onClick={handleSearchIconClick}
+              style={{ cursor: "pointer" }}
+            >
+              &#128269;
+            </span>
             </h2>
+          
           </span>
+          {searchBarVisible && (
+            <div className="container d-flex justify-content-between">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search by keyword..."
+                value={searchKeyword}
+                onChange={handleSearchChange}
+              />
+            </div>
+          )}
           <div className="row">
-            {articles?.map((element) => {
-              return (
-                <div className="col-md-4" key={element.url}>
-                  <Newsitem
-                    key={v4()}
-                    title={element.title}
-                    description={element.content}
-                    imageUrl={element.imageUrl}
-                    redMore={element.readMoreUrl}
-                    source={element.source}
-                    author={element.author}
-                    date={element.publishedAt}
-                  />
-                </div>
-              );
-            })}
+            {filteredArticles.length > 0
+              ? filteredArticles.map((element) => (
+                  <div className="col-md-4" key={element.url}>
+                    <Newsitem
+                      key={v4()}
+                      title={element.title}
+                      description={element.content}
+                      imageUrl={element.imageUrl}
+                      newsUrl={element.url}
+                      redMore={element.readMoreUrl}
+                      author={element.author}
+                      date={element.publishedAt}
+                      source={element.source}
+                    />
+                  </div>
+                ))
+              : articles.map((element) => (
+                  <div className="col-md-4" key={element.url}>
+                    <Newsitem
+                      key={v4()}
+                      title={element.title}
+                      description={element.content}
+                      imageUrl={element.imageUrl}
+                      newsUrl={element.url}
+                      redMore={element.readMoreUrl}
+                      author={element.author}
+                      date={element.publishedAt}
+                      source={element.source}
+                    />
+                  </div>
+                ))}
           </div>
           <div className="container d-flex justify-content-between"></div>
         </div>
