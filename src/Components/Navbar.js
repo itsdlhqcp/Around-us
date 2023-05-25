@@ -2,10 +2,6 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'
 import "./News.css"
-import LanguageSwitcherx from './TransSwitch';
-
-
-
 
 const Navbar=()=>{
     //component navbar is rendered here
@@ -60,7 +56,6 @@ const Navbar=()=>{
                 <Link className="navbar-brand" to="/" onClick={handleCollapse}>🆃 🅽 TopNews</Link>
                 
                 <div className="d-flex align-items-center">
-                <LanguageSwitcherx/>
              
                 <button 
                     className="navbar-toggler ms-3"

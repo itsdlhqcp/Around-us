@@ -11,22 +11,8 @@ const Newsitem = (props) => {
   const [showLink, setShowLink] = useState(false);
   const [translatedTitle, setTranslatedTitle] = useState("");
   const [translatedDescription, setTranslatedDescription] = useState("");
+  const [language, setLanguage] = useState("en");
 
-
-
-
-  useEffect(() => {
-    const translateTitleAndDescription = async () => {
-      const [translatedTitle, translatedDescription] = await Promise.all([
-        translate(title, { to: "en" }),
-        translate(description, { to: "en" }),
-      ]);
-      setTranslatedTitle(translatedTitle);
-      setTranslatedDescription(translatedDescription);
-    };
-    translateTitleAndDescription();
-  }, [title, description]);
-  
   const closeModal = () => {
     setShowModal(false);
   };
@@ -65,11 +51,66 @@ const Newsitem = (props) => {
     }
   };
 
+  //language functions
+  useEffect(() => {
+    const translateTitleAndDescription = async () => {
+      const [translatedTitle, translatedDescription] = await Promise.all([
+        translate(title, { to: language }),
+        translate(description, { to: language }),
+      ]);
+      setTranslatedTitle(translatedTitle);
+      setTranslatedDescription(translatedDescription);
+    };
+    translateTitleAndDescription();
+  }, [title, description, language]);
+
+  const [showLanguageSwitcher, setShowLanguageSwitcher] = useState(false);
+
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value);
+    setShowLanguageSwitcher(false); // Close the language switcher
+  };
+
+  const toggleLanguageSwitcher = () => {
+    setShowLanguageSwitcher(!showLanguageSwitcher);
+  };
+
+ 
+
+  const languageOptions = [
+    { label: "ENGLISH", value: "en" },
+    { label: "മലയാളം", value: "ml" },
+    { label: "हिंदी", value: "hi" },
+    { label: "Français", value: "fr" },
+  ];
+
   
   return (
     <div key={key} className='my-3'>
       <div className='card'>
         <div>
+        <div className="position-relative">
+            {showLanguageSwitcher && (
+              <div className="language-switcher">
+                <select value={language} onChange={handleLanguageChange}>
+                  {languageOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+                <button onClick={toggleLanguageSwitcher}>---ꜱᴇʟᴇᴄᴛ ᴛᴏ ᴛʀᴀɴꜱʟᴀᴛᴇ ʟᴀɴɢᴜᴀɢᴇ---</button>
+              </div>
+            )}
+            {!showLanguageSwitcher && (
+              <button
+                className="btn btn-sm btn-link position-absolute top-0 start-0"
+                onClick={toggleLanguageSwitcher}
+              >
+                诶𝒜
+              </button>
+            )}
+          </div>
         <div
           style={{
             display: "flex",
