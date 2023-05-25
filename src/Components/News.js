@@ -35,7 +35,7 @@ const News = (props) => {
         }
 
         // Fetch data from API
-        const response = await axios.get(`https://inshorts.deta.dev/news?category=${props.category}`);
+        const response = await axios.get(`https://fragile-pear-umbrella.cyclic.app/https://inshorts.deta.dev/news?category=${props.category}`);
         // const response = await axios.get(`https://inshorts.deta.dev/news?category=${props.category}`);
         setLoader(false);
         setArticles(response.data.data);
