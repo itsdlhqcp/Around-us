@@ -83,7 +83,6 @@ const Navbar=()=>{
                 {/* <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/" onClick={handleCollapse}>Home</Link>
                 </li> */}
-                <li className="nav-item"><Link className="nav-link" to="/gpt" onClick={handleCollapse}><span style={{ color: 'green', fontWeight: 'bold', fontStyle: 'italic' }}>&lt;--TRY GPT VOICE AI--&gt;</span></Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/voice" onClick={handleCollapse}><span style={{ color: '#ADD8E6', fontWeight: 'bold' }}>ASK FILTERED NEWS</span></Link></li>  
                 <li className="nav-item"><Link className="nav-link" to="/world" onClick={handleCollapse}>World</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/india" onClick={handleCollapse}>India</Link></li>

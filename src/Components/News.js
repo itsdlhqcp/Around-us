@@ -80,7 +80,7 @@ const News = (props) => {
     <div>
       {loader ? (
         <div className="myloader">
-          <InfinitySpin width="200" color="#000" />
+          <InfinitySpin width="200" color="white" />
         </div>
       ) : (
         <div
@@ -90,9 +90,9 @@ const News = (props) => {
           <span class="small-orange-double-underline">
             <h2
               className="text-center "
-              style={{ margin: "0px 0px 7px 0px" }}
+              style={{ margin: "0px 0px 7px 0px", color: "white" }}
             >
-              News - Top{" "}
+              Top{" "}
               {capitalizeFirstLetter(props.category)} Headlines --
               <span
               className="search-icon"

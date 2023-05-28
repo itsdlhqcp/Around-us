@@ -1,8 +1,7 @@
 import { Container, Carousel } from 'react-bootstrap';
 
 const infoCards = [
-  { color: '#ECF0F1  ', title: 'Try Gpt Voice AI', link: '/gpt' },
-  { color: '#ECF0F1 ', title: 'Ask Filtered News', link: '/voice' },
+  { color: '#ECF0F1 ', title: 'Ask Filtered News', link: '/voice' }
 ];
 
 const HeadNav = () => {
