@@ -17,7 +17,7 @@ const Newsitem = (props) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowTag(false);
-    }, 7000);
+    }, 5000);
   
     return () => {
       clearTimeout(timer); // Clear the timeout if the component unmounts before 7 seconds
