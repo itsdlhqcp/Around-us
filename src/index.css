@@ -64,3 +64,14 @@ html {
   font-size: 12px; /* reduce the font size as desired */
   /* reduce the width as desired */
 }
+
+.tag {
+  position: absolute;
+  top: -10px;
+  left: 36px;
+  background-color: green;
+  color: white;
+  padding: 1px 5px;
+  font-size: 12px;
+  border-radius: 5px 5px 5px 0px;
+}

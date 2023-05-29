@@ -12,6 +12,34 @@ const Newsitem = (props) => {
   const [translatedTitle, setTranslatedTitle] = useState("");
   const [translatedDescription, setTranslatedDescription] = useState("");
   const [language, setLanguage] = useState("en");
+  const [showTag, setShowTag] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTag(false);
+    }, 7000);
+  
+    return () => {
+      clearTimeout(timer); // Clear the timeout if the component unmounts before 7 seconds
+    };
+  }, []);
+
+  useEffect(() => {
+    const translateTitleAndDescription = async () => {
+      // Translation code...
+  
+      const isFirstVisit = !localStorage.getItem('visited');
+      if (isFirstVisit) {
+        setShowTag(true); // Show the tag for first-time visitors
+        localStorage.setItem('visited', 'true'); // Set a flag in localStorage indicating the user has visited
+      }
+    };
+  
+    translateTitleAndDescription();
+  }, [title, description, language]);
+  
+  
+  
 
   const closeModal = () => {
     setShowModal(false);
@@ -73,6 +101,7 @@ const Newsitem = (props) => {
 
   const toggleLanguageSwitcher = () => {
     setShowLanguageSwitcher(!showLanguageSwitcher);
+    setShowTag(false); // Hide the tag
   };
 
  
@@ -90,6 +119,9 @@ const Newsitem = (props) => {
       <div className='card'>
         <div>
         <div className="position-relative">
+        {showTag && (
+        <span className="tag">Translate to your language</span>
+            )}
             {showLanguageSwitcher && (
               <div className="language-switcher">
                 <select value={language} onChange={handleLanguageChange}>
