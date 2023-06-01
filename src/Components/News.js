@@ -93,14 +93,14 @@ const News = (props) => {
               style={{ margin: "0px 0px 7px 0px", color: "white" }}
             >
               Top{" "}
-              {capitalizeFirstLetter(props.category)} Headlines --
+              {capitalizeFirstLetter(props.category)} Headlines 
               <span
-              className="search-icon"
-              onClick={handleSearchIconClick}
-              style={{ cursor: "pointer" }}
-            >
-              &#128269;
-            </span>
+          className="search-icon"
+         onClick={handleSearchIconClick}
+         style={{ cursor: "pointer", fontSize: "small", fontFamily: "Arial" }}
+>
+  -search
+</span>
             </h2>
           
           </span>
