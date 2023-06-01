@@ -1,7 +1,7 @@
 import { Container, Carousel } from 'react-bootstrap';
 
 const infoCards = [
-  { color: '#ECF0F1 ', title: 'Ask Filtered News', link: '/voice' }
+  { color: '#7baaa4', title: 'Ask Filtered News', link: '/voice' }
 ];
 
 const HeadNav = () => {
