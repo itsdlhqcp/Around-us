@@ -90,7 +90,7 @@ const News = (props) => {
           <span class="small-orange-double-underline">
             <h2
               className="text-center "
-              style={{ margin: "0px 0px 7px 0px", color: "white" }}
+              style={{ margin: "0px 0px 7px 0px", color: "black" }}
             >
               Top{" "}
               {capitalizeFirstLetter(props.category)} Headlines 
