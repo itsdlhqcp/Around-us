@@ -7,7 +7,6 @@ const infoCards = [
   { color: '#516678', title: 'News by Terms', info: 'Bitcoin, PlayStation 5, Smartphones, Stock Market, Donald Trump...', text: 'What\'s up with PlayStation 5' },
   
 ];
-
 const NewsCards = ({ articles, activeArticle }) => {
  
 
