@@ -47,7 +47,7 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
                     </div>
                     {showTag && (
                         <div className={classes.floatingTag}>
-                            Floating Tag
+                            Try saying : GO BACK to take back
                         </div>
                     )}
                 </small>
