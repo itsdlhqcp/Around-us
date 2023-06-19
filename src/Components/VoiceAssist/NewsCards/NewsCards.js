@@ -2,10 +2,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 import NewsCard from '../NewsCard/NewsCard';
 
 const infoCards = [
-  { color: '#a0a8b9', title: 'News by Countries', info: 'India, Australia, France, China, United States, Germany, Japan, Saudi Arabia', text: 'Give me the latest news from India' },
+  { color: '#a0a8b9', title: 'News by Sources', info: 'CNN, The Hindu, BBC News, The Times of India, National Geographic, Associated Press, Google News, Buzzfeed, TechCrunch, ABC News...', text: 'Give me the news from CNN' },
   { color: '#788698', title: 'News by Categories', info: 'Business, Entertainment, General, Health, Science, Sports, Technology', text: 'Give me the latest Technology news' },
   { color: '#516678', title: 'News by Terms', info: 'Bitcoin, PlayStation 5, Smartphones, Stock Market, Donald Trump...', text: 'What\'s up with PlayStation 5' },
-  { color: '#56563a', title: 'News by Sources', info: 'CNN, The Hindu, BBC News, The Times of India, National Geographic, Associated Press, Google News, Buzzfeed, TechCrunch, ABC News...', text: 'Give me the news from CNN' },
+  
 ];
 
 const NewsCards = ({ articles, activeArticle }) => {
