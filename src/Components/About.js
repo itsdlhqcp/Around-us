@@ -14,7 +14,8 @@ function AboutUs() {
               <li>
                 <h5>
                   TopNews is a News app build to give important news
-                  information to everyone.
+                  information to everyone.This news app buid as a part of college mini-project by
+                  Adwaith A.M,Dilhaque C P,Noel Saji and Nithin p mathew
                 </h5>
               </li>
               <li>

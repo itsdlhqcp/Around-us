@@ -35,7 +35,7 @@ const VoiceScreen =() => {
     <div style={{ marginBottom: '3rem' }}>
     <NewsCards articles={newsArticles} activeArticle={activeArticle} />
     <footer style={{ fontSize: '0.8rem' }}>
-        © 2023 developed by dlhq. All rights reserved.
+        © 2023 developed by TEAM-A. All rights reserved.
       </footer>
     </div>
   );
